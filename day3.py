@@ -19,12 +19,16 @@ def challenge_explanation():
 class treasure_island():
 
     def __input_validator(self, user_choice, step):
+        '''
+        This function takes the user's choice and the step he is currently playing. These values
+        are used to verify a valid choice has been made. If not the program will close. 
+        '''
         try: 
             if step == 1:
                 if user_choice.lower() != 'left' and user_choice.lower() != 'right': raise ValueError
-            if step == 2:
+            elif step == 2:
                 if user_choice.lower() != 'swim' and user_choice.lower() != 'wait': raise ValueError
-            if step == 3:
+            elif step == 3:
                 if user_choice.lower() != 'blue' and user_choice.lower() != 'red' and user_choice.lower() != 'yellow': raise ValueError
         except ValueError:
             print('Why are you doing this? Stick to the rules!')

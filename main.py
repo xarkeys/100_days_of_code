@@ -37,6 +37,7 @@ def print_welcome_message():
         print('', day, desc, sep=' - ', end='\n')
     try:
         # The user enters a day (number) for which he wants to see more details. 
+        # The value gets validated, if it's not valid, the program will end. 
         day_choice = int(input('\nPlease enter a number for which day you want to explore (day 1 to day 5 are available at the moment): '))
         if day_choice < 0 or day_choice > 5: raise ValueError
     except ValueError:
