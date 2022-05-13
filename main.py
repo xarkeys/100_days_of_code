@@ -73,7 +73,8 @@ def run_the_program(day):
         day2.split_the_bill()
         sys.exit('Run completed.')
     elif day == 'day3':
-        day3.treasure_island()
+        treasure_island = day3.treasure_island()
+        treasure_island.play_a_game()
         sys.exit('Run completed.')
     elif day == 'day4':
         rock_paper_scissors = day4.rock_paper_scissors()
