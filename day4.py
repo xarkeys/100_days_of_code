@@ -2,9 +2,11 @@ import random
 import sys
 
 def challenge_explanation():
+
     '''
     This function returns an intro text to the challenge.
     '''
+
     explanation = '''
     -------------------- DAY04 --------------------
     - Title: Rock, paper, scissors                -
@@ -17,37 +19,49 @@ def challenge_explanation():
 
     return explanation 
 
-def rock_paper_scissors():
-    '''
-    Main program.
-    '''
-    try:
-        choice = int(input('What do you choose? Type 0 for rock, 1 for paper or 2 for scissors.'))
-        if choice < 0 or choice > 2: raise ValueError
-    except ValueError:
-        sys.exit('Fail, you did not enter 0, 1 or 2.')
-    computer_choice = random.randint(0,2)
-    list_of_choices = ['rock', 'paper', 'scissor']
-    print('computer chose {}'.format(list_of_choices[computer_choice]))
+class rock_paper_scissors():
 
-    if choice == 0:
-        if computer_choice == 1:
-            print('computer wins')
-        elif computer_choice == 2:
-            print('you win')
+    def __init__(self):
+        try:
+            # The user chooses the hand he wants to play. 
+            self.__choice = int(input('What do you choose? Type 0 for rock, 1 for paper or 2 for scissors.'))
+            if self.__choice < 0 or self.__choice > 2: raise ValueError
+        except ValueError:
+            sys.exit('Fail, you did not enter 0, 1 or 2.')
+
+    def play_a_game(self):
+
+        '''
+        This function uses the user's chosen value (0, 1 or 2) and returns any of these three options:
+        - You win!
+        - Computer wins!
+        - Draw
+        '''
+
+        computer_choice = random.randint(0,2)
+        list_of_choices = ['rock', 'paper', 'scissor']
+        print('Computer has: {}'.format(list_of_choices[computer_choice]))
+
+        if self.__choice == 0:
+            if computer_choice == 1:
+                outcome = 'Computer wins!'
+            elif computer_choice == 2:
+                outcome = 'You win!'
+            else:
+                outcome = 'Draw'
+        elif self.__choice == 1:
+            if computer_choice == 2:
+                outcome = 'Computer wins!'
+            elif computer_choice == 0:
+                outcome = 'You win!'
+            else:
+                outcome = 'Draw'
         else:
-            print('draw')
-    elif choice == 1:
-        if computer_choice == 2:
-            print('computer wins')
-        elif computer_choice == 0:
-            print('you win')
-        else:
-            print('draw')
-    else:
-        if computer_choice == 0:
-            print('computer wins')
-        elif computer_choice == 1:
-            print('you win')
-        else:
-            print('draw')
+            if computer_choice == 0:
+                outcome = 'Computer wins!'
+            elif computer_choice == 1:
+                outcome = 'You win!'
+            else:
+                outcome = 'Draw'
+
+        return outcome

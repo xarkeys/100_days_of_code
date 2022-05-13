@@ -6,6 +6,7 @@ import day4
 import day5
 
 def print_welcome_message():
+
     '''
     This function prints the welcome message which gives the user some choices:
     - which day do you want to explore, which shows details about the challenge
@@ -14,6 +15,7 @@ def print_welcome_message():
     The function returns the choice Y or N wether the user wants to run the program
     and the chosen day. 
     '''
+
     print('''
     -------------------- MAIN --------------------
     - Welcome to the 100 days of code challenge. -
@@ -34,17 +36,20 @@ def print_welcome_message():
     for day, desc in available_days.items():
         print('', day, desc, sep=' - ', end='\n')
     try:
-        # The user enters a day (number) for which he want's to see more details. 
+        # The user enters a day (number) for which he wants to see more details. 
         day_choice = int(input('\nPlease enter a number for which day you want to explore (day 1 to day 5 are available at the moment): '))
         if day_choice < 0 or day_choice > 5: raise ValueError
     except ValueError:
         sys.exit('An invalid option has been entered, why would you do such a monstrous thing.')
 
     print('\nDay {}, what a lovely choice. This is the challenge explanation:'.format(day_choice))
+
     # We format the day variable based on the word day and the user's input (chosen number).
     day = 'day' + str(day_choice)
+
     # Every challenge has a .challenge_explanation() function which prints more details. 
     explanation_function = day + '.challenge_explanation()'
+
     # Eval allows us to 'run' an ordinary string as a function. 
     print(eval(explanation_function))
     try:
@@ -56,9 +61,11 @@ def print_welcome_message():
     return run_it, day
 
 def run_the_program(day):
+
     '''
     This function will start the specific challenge of the chosen day.
     '''
+
     if day == 'day1':
         day1.name_generator()
         sys.exit('Run completed.')
@@ -69,10 +76,12 @@ def run_the_program(day):
         day3.treasure_island()
         sys.exit('Run completed.')
     elif day == 'day4':
-        day4.rock_paper_scissors()
+        rock_paper_scissors = day4.rock_paper_scissors()
+        print(rock_paper_scissors.play_a_game())
         sys.exit('Run completed.')
     elif day == 'day5':
-        day5.generate_random_password()
+        random_password = day5.random_password()
+        print(random_password.generate_password())
         sys.exit('Run completed.')
 
 available_days = {
