@@ -1,9 +1,12 @@
 import sys
 
+
 def challenge_explanation():
-    '''
-    This function returns an intro text to the challenge.
-    '''
+    """
+    Request an explanation of the DAY 2 challenge.
+    :return: A detailed explanation on what the program does.
+    :rtype: String
+    """
     explanation = '''
     -------------------- DAY02 --------------------
     - Title: Split the bill                       -

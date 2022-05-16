@@ -1,5 +1,5 @@
 import sys
-import day_1.main_day_1 as day1
+import day_1.name_generator as day1
 
 
 def print_welcome_message():
