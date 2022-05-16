@@ -1,9 +1,7 @@
 import sys
-import day1
-import day2
-import day3
-import day4
-import day5
+from day_4 import main_day_4
+from day_5 import main_day_5
+
 
 def print_welcome_message():
 
