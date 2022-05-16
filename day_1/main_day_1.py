@@ -1,30 +1,43 @@
 def challenge_explanation():
     """
-    Request an explanation of this day's challenge: day 1.
+    Request an explanation of the DAY 1 challenge.
     :return: A detailed explanation on what the program does.
     :rtype: String
     """
-
     explanation = '''
     -------------------- DAY01 --------------------
     - Title: Band name generator                  -
     - On day one a Band name generator was        -
     - created.The program asks two questions.     -
     - Based on the user's input you will receive  -
-    - a band-name. How original is that!          -
+    - a band name. How original is that!          -
     -----------------------------------------------
     '''
-
     return explanation
 
 
-def name_generator():
+class BandName:
     """
-    Generate a name based on the user's input.
-    :return: None
+    Create an object of the BandName class. The class can be used to generate a band name based
+    on a city and hobby.
     """
-    print('Welcome to the Band Name Generator.')
-    city_name = input('What\'s the name of the city you grew up in? ')
-    hobby_name = input('What\'s your main hobby? ')
-    band_name = hobby_name + 'ing' + ' ' + city_name + ' ' + '5000'
-    print('You band name could be: {}'.format(band_name))
+    def __init__(self, city_name, hobby_name):
+        """
+        Inits the BandName class.
+        :param city_name: The name of the city where the user lives.
+        :type city_name: str
+        :param hobby_name: The hobby of the user.
+        :type hobby_name: str
+        """
+        self.__city_name = city_name
+        self.__hobby_name = hobby_name
+        self.__band_name = ''
+
+    def get_band_name(self):
+        """
+        Create a band name, using the objects __city_name, __hobby_name vars and the String 5000.
+        :return: The generated band name.
+        :rtype: str
+        """
+        self.__band_name = self.__hobby_name + self.__city_name + 'ers' + ' 5000'
+        return 'We generated the following band name for you: ' + self.__band_name
