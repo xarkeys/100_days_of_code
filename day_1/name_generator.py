@@ -11,15 +11,6 @@ def challenge_explanation():
                 'input you will receive a band name. How original is that!'
     expl = explanation.Explanation(expl_text, 1)
     expl.print_explanation()
-    # explanation = '''
-    # -------------------- DAY01 --------------------
-    # - Title: Band name generator                  -
-    # - On day one a Band name generator was        -
-    # - created.The program asks two questions.     -
-    # - Based on the user's input you will receive  -
-    # - a band name. How original is that!          -
-    # -----------------------------------------------
-    # '''
 
 
 class BandName:

@@ -79,8 +79,3 @@ class Explanation:
         self.__format_explanation()
         for line in self.__expl_formatted:
             print(line)
-
-
-test = Explanation('this is a test string bla bla test hallo een twee drie vier hoedje van papier lolsnorretjes '
-                   'ditadfads ahqeqr ds;fad langere tekst feest lololsa fsadfasdfa,adsf kadsf', 2)
-print(test.print_explanation())

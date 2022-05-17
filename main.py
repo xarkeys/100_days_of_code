@@ -51,7 +51,8 @@ def print_welcome_message():
     explanation_function = fabricated_day + '.challenge_explanation()'
 
     # Eval allows us to 'run' an ordinary string as a function. 
-    print(eval(explanation_function))
+    eval(explanation_function)
+
     try:
         run_it_input = input('Would you like to run this program? (Y or N) ')
     except ValueError:
