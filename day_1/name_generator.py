@@ -1,7 +1,7 @@
 import explanation
 
 
-def challenge_explanation():
+def challenge_explanation() -> None:
     """
     Request an explanation of the DAY 1 challenge.
     :return: A detailed explanation on what the program does.

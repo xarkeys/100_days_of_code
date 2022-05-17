@@ -1,5 +1,6 @@
 import sys
 import day_1.name_generator as day1
+import day_2.split_the_bill as day2
 
 
 def print_welcome_message():
@@ -75,21 +76,13 @@ def run_the_program(day_param):
         program = day1.BandName(city_name, hobby_name)
         print(program.get_band_name())
         sys.exit('Run completed.')
-    # elif day == 'day2':
-    #     day2.split_the_bill()
-    #     sys.exit('Run completed.')
-    # elif day == 'day3':
-    #     treasure_island = day3.treasure_island()
-    #     treasure_island.play_a_game()
-    #     sys.exit('Run completed.')
-    # elif day == 'day4':
-    #     rock_paper_scissors = day4.rock_paper_scissors()
-    #     print(rock_paper_scissors.play_a_game())
-    #     sys.exit('Run completed.')
-    # elif day == 'day5':
-    #     random_password = day5.random_password()
-    #     print(random_password.generate_password())
-    #     sys.exit('Run completed.')
+    elif day_param == 'day2':
+        bill_no_tip = float(input('What is the bill amount?\n'))
+        tip_percentage = int(input('How much percent do you want to tip? (10, 12 or 15)\n'))
+        num_diners = int(input('Among how many people do you want to split the bill?\n'))
+        program = day2.Bill(bill_no_tip, tip_percentage)
+        print(program.split(num_diners))
+        sys.exit('Run completed.')
 
 
 available_days = {
