@@ -3,6 +3,7 @@ import day_1.name_generator as day1
 import day_2.split_the_bill as day2
 import day_3.treasure_island as day3
 import day_4.rock_paper_scissors as day4
+import day_5.password_generator as day5
 
 
 def print_welcome_message():
@@ -92,6 +93,10 @@ def run_the_program(day_param):
     elif day_param == 'day4':
         program = day4.RockPaperScissors()
         program.play()
+        sys.exit('Run completed.')
+    elif day_param == 'day5':
+        program = day5.RandomPassword()
+        print(program.generate_password())
         sys.exit('Run completed.')
 
 
