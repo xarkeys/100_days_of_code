@@ -2,6 +2,7 @@ import sys
 import day_1.name_generator as day1
 import day_2.split_the_bill as day2
 import day_3.treasure_island as day3
+import day_4.rock_paper_scissors as day4
 
 
 def print_welcome_message():
@@ -86,6 +87,10 @@ def run_the_program(day_param):
         sys.exit('Run completed.')
     elif day_param == 'day3':
         program = day3.TreasureIsland()
+        program.play()
+        sys.exit('Run completed.')
+    elif day_param == 'day4':
+        program = day4.RockPaperScissors()
         program.play()
         sys.exit('Run completed.')
 
