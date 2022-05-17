@@ -1,6 +1,7 @@
 import sys
 import day_1.name_generator as day1
 import day_2.split_the_bill as day2
+import day_3.treasure_island as day3
 
 
 def print_welcome_message():
@@ -82,6 +83,10 @@ def run_the_program(day_param):
         num_diners = int(input('Among how many people do you want to split the bill?\n'))
         program = day2.Bill(bill_no_tip, tip_percentage)
         print(program.split(num_diners))
+        sys.exit('Run completed.')
+    elif day_param == 'day3':
+        program = day3.TreasureIsland()
+        program.play()
         sys.exit('Run completed.')
 
 

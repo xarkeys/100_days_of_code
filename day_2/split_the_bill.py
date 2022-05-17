@@ -6,11 +6,11 @@ def challenge_explanation() -> None:
     """
     Request an explanation of the DAY 2 challenge.
     :return: A detailed explanation on what the program does.
-    :rtype: String
+    :rtype: None
     """
     expl_text = 'The second day was filled with dollar signs. This program splits the bill for you (including the tip '\
                 'percentage) and your friends. Bien provecho!'
-    expl = explanation.Explanation(expl_text, 1)
+    expl = explanation.Explanation(expl_text, 2)
     expl.print_explanation()
 
 
