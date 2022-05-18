@@ -1,3 +1,6 @@
+import sys
+
+
 def add_line_end(space_to_fill: int) -> str:
     """
     Create a string consisting of whitespace and a '-' character. This string can be used to add to the end of
@@ -56,6 +59,13 @@ class Explanation:
         # below the maximum text width limit. If it is, we just add the word and a whitespace. If it's not we start
         # a new line and add the current word in the iteration.
         for word in expl:
+            try:
+                if len(word) > self.__max_text_width:
+                    raise ValueError
+            except ValueError:
+                print('The explanation contains a word that is bigger than the maximum text on one line. The'
+                      'developer has not implemented a solution to this yet. I guess he\'s a bit lazy?')
+                sys.exit('Bye')
             counter += len(word)
             if counter < self.__max_text_width:
                 one_line += word + ' '
