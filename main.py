@@ -1,4 +1,5 @@
 import sys
+import explanation
 import day_1.name_generator as day1
 import day_2.split_the_bill as day2
 import day_3.treasure_island as day3
@@ -16,19 +17,11 @@ def print_welcome_message():
         str result1 is the chosen day by the user.
         str result2 is the chosen action by the user (Y or N).
     """
-
-    print('''
-    -------------------- MAIN --------------------
-    - Welcome to the 100 days of code challenge. -
-    - This is the main page where you can try    -
-    - the challenges. Every challenge has        -
-    - a \'challenge_explanation\' function which   -
-    - gives you details about the goal of the    -
-    - challenge.                                 -
-    ----------------------------------------------
-    ''')
-
-    print('These days have been completed so far:\n')
+    expl = explanation.Explanation('Welcome to the 100 days of code challenge. This is the main page where you can '
+                                   'try the challenges. Every challenge has a \'challenge_explanation\' function '
+                                   'which gives you details about the goal of the challenge.', 0)
+    expl.print_explanation()
+    print('\nThese days have been completed so far:\n')
 
     # The 'available_days' dictionary contains the following information:
     # KEY: day name, e.g. Day 1
