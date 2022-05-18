@@ -63,7 +63,7 @@ class Explanation:
                 if len(word) > self.__max_text_width:
                     raise ValueError
             except ValueError:
-                print('The explanation contains a word that is bigger than the maximum text on one line. The'
+                print('The explanation contains a word that is bigger than the maximum text on one line. The '
                       'developer has not implemented a solution to this yet. I guess he\'s a bit lazy?')
                 sys.exit('Bye')
             counter += len(word)

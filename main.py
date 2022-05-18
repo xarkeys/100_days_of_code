@@ -5,6 +5,8 @@ import day_2.split_the_bill as day2
 import day_3.treasure_island as day3
 import day_4.rock_paper_scissors as day4
 import day_5.password_generator as day5
+import day_6.reeborgs_world_maze as day6
+import day_7.hangman as day7
 
 
 def print_welcome_message():
@@ -32,9 +34,9 @@ def print_welcome_message():
     try:
         # The user enters a day (number) for which he wants to see more details. 
         # The value gets validated, if it's not valid, the program will end. 
-        day_choice = int(input('\nPlease enter a number for which day you want to explore (day 1 to day 5 are '
+        day_choice = int(input('\nPlease enter a number for which day you want to explore (day 1 to day 7 are '
                                'available at the moment): '))
-        if day_choice < 0 or day_choice > 5:
+        if day_choice < 0 or day_choice > 7:
             raise ValueError
     except ValueError:
         sys.exit('An invalid option has been entered, why would you do such a monstrous thing.')
@@ -91,6 +93,13 @@ def run_the_program(day_param):
         program = day5.RandomPassword()
         print(program.generate_password())
         sys.exit('Run completed.')
+    elif day_param == 'day6':
+        print('This day can not be tested here.')
+        sys.exit('Run completed.')
+    elif day_param == 'day7':
+        program = day7.Game()
+        program.play()
+        sys.exit('Run completed.')
 
 
 available_days = {
@@ -99,6 +108,8 @@ available_days = {
     'Day 3': 'Find the treasure',
     'Day 4': 'Rock, paper, scissors',
     'Day 5': 'Password generator',
+    'Day 6': 'Reeborg\'s World - Maze',
+    'Day 7': 'Hangman',
 }
 
 run_it, chosen_day = print_welcome_message()
