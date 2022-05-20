@@ -7,6 +7,7 @@ import day_4.rock_paper_scissors as day4
 import day_5.password_generator as day5
 import day_6.reeborgs_world_maze as day6
 import day_7.hangman as day7
+import day_8.ceasar_cipher as day8
 
 
 def print_welcome_message():
@@ -34,9 +35,9 @@ def print_welcome_message():
     try:
         # The user enters a day (number) for which he wants to see more details. 
         # The value gets validated, if it's not valid, the program will end. 
-        day_choice = int(input('\nPlease enter a number for which day you want to explore (day 1 to day 7 are '
+        day_choice = int(input('\nPlease enter a number for which day you want to explore (day 1 to day 8 are '
                                'available at the moment): '))
-        if day_choice < 0 or day_choice > 7:
+        if day_choice < 0 or day_choice > 8:
             raise ValueError
     except ValueError:
         sys.exit('An invalid option has been entered, why would you do such a monstrous thing.')
@@ -67,7 +68,6 @@ def run_the_program(day_param):
     :param day_param: String
     :return: None
     """
-
     if day_param == 'day1':
         city_name = input('What city did you grow up in?\n')
         hobby_name = input('What is your favourite hobby?\n')
@@ -100,6 +100,22 @@ def run_the_program(day_param):
         program = day7.Game()
         program.play()
         sys.exit('Run completed.')
+    elif day_param == 'day8':
+        try:
+            action = input('Do you want to encrypt or decrypt? e or d: ')
+            message = input('Provide a message:\n')
+            key = int(input('Enter the key: '))
+            if action == 'e':
+                decrypt = False
+            else:
+                decrypt = True
+            print(day8.encrypt(message, key, decrypt=decrypt))
+            if action != 'e' and action != 'd':
+                raise ValueError
+        except ValueError as e:
+            print('Please provide correct values.')
+            print(e.__str__())
+        sys.exit('Run completed.')
 
 
 available_days = {
@@ -110,6 +126,7 @@ available_days = {
     'Day 5': 'Password generator',
     'Day 6': 'Reeborg\'s World - Maze',
     'Day 7': 'Hangman',
+    'Day 8': 'Caesar Cipher',
 }
 
 run_it, chosen_day = print_welcome_message()
