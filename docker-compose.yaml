@@ -1,0 +1,14 @@
+version: '3'
+services:
+  100days:
+    image: 100days:v1.0
+    stdin_open: true # docker run i
+    tty: true        # docker run t
+    environment:
+      - TEST=test
+    volumes:
+      - test-data:/test-volume
+volumes:
+  test-data:
+    driver: local
+
